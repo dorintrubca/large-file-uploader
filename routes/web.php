@@ -3,8 +3,5 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChunkUploadController;
 
-Route::get('/', function () {
-    return view('upload');
-});
-
-Route::post('/upload', [ChunkUploadController::class, 'upload'])->name('upload');
+Route::post('/upload/chunk', [ChunkUploadController::class, 'uploadChunk'])->name('upload.chunk');
+Route::view('/', 'upload');
